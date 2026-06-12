@@ -8,6 +8,7 @@ public class Jdbc {
     public static Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
+            // Pass empty string "" for password to match default local database setups
             return DriverManager.getConnection("jdbc:mysql://localhost:3306/studentdb", "root", "");
         } catch (Exception e) {
             e.printStackTrace();
